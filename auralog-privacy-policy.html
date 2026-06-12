@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AuraLog Privacy Policy — Chetan Chavan</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #534AB7;
+      --purple-light: #EEEDFE;
+      --teal: #1D9E75;
+      --teal-light: #E1F5EE;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --bg: #f9f9fb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --nav-bg: rgba(255,255,255,0.92);
+      --icon-bg: #f3f4f6;
+      --icon-color: #374151;
+    }
+
+    [data-theme="dark"] {
+      --text: #f1f0ff;
+      --muted: #9ca3af;
+      --bg: #0f0e1a;
+      --card-bg: #1a1830;
+      --border: #2e2b4a;
+      --nav-bg: rgba(15,14,26,0.92);
+      --purple-light: #26215C;
+      --teal-light: #04342C;
+      --teal: #5DCAA5;
+      --icon-bg: #26215C;
+      --icon-color: #AFA9EC;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .nav-brand { font-weight: 600; font-size: 16px; color: var(--purple); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-brand span { font-weight: 400; color: var(--muted); }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .back-btn { text-decoration: none; color: var(--muted); font-size: 14px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+    .back-btn:hover { color: var(--purple); }
+
+    /* DARK TOGGLE */
+    .toggle-wrap { display: flex; align-items: center; gap: 7px; }
+    .toggle-emoji { font-size: 13px; line-height: 1; user-select: none; }
+    .theme-toggle {
+      width: 44px; height: 24px;
+      background: #e5e7eb;
+      border-radius: 12px; border: none;
+      cursor: pointer; position: relative;
+      transition: background 0.3s; flex-shrink: 0;
+    }
+    [data-theme="dark"] .theme-toggle { background: #534AB7; }
+    .theme-toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      transition: transform 0.3s;
+    }
+    [data-theme="dark"] .theme-toggle::after { transform: translateX(20px); }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* APP ICON & TITLE HEADER */
+    .policy-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .app-icon {
+      font-size: 3rem;
+      width: 80px;
+      height: 80px;
+      background: var(--purple-light);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 12px rgba(83, 74, 183, 0.15);
+      animation: pulse 3s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    .policy-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .policy-header .last-updated {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* CARD-BASED CONTENT */
+    .policy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .policy-section {
+      margin-bottom: 2rem;
+    }
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .policy-section h2::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: var(--purple);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .policy-section p {
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.9;
+    }
+    .policy-section li {
+      margin-bottom: 0.5rem;
+    }
+    .policy-section a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .policy-section a:hover {
+      text-decoration: underline;
+    }
+    [data-theme="dark"] .policy-section a {
+      color: #AFA9EC;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    
+    @media(max-width: 600px) {
+      .container {
+        padding: 2rem 1.2rem;
+      }
+      .policy-card {
+        padding: 1.5rem;
+      }
+      nav {
+        padding: 0 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">Chetan Chavan <span>/ AuraLog</span></a>
+    <div class="nav-right">
+      <a href="index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Portfolio
+      </a>
+      <div class="toggle-wrap">
+        <span class="toggle-emoji">☀️</span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+        <span class="toggle-emoji">🌙</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="policy-header">
+      <div class="app-icon">📒</div>
+      <h1>AuraLog Privacy Policy</h1>
+      <div class="last-updated">Last Updated: June 12, 2026</div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-section">
+        <h2>Introduction</h2>
+        <p>Welcome to <strong>AuraLog</strong>, a personal mood tracking and journaling mobile application. AuraLog is designed to help you capture, visualize, and reflect on your daily emotional states, thoughts, and reflections.</p>
+        <p>I built AuraLog as a personal project. This page is used to inform users regarding my policies with the collection, use, and disclosure of personal information if anyone decides to use the AuraLog application.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Information Collection and Use</h2>
+        <p><strong>AuraLog is an offline-first application.</strong> Your privacy is my highest priority. Here is what you need to know about your data:</p>
+        <ul>
+          <li><strong>No Server Uploads:</strong> All logs, diary entries, mood scores, titles, and details you input into the app are stored exclusively on your device's local database. We do not host, store, or transmit your private diary entries to any external servers.</li>
+          <li><strong>No Personal Identification:</strong> AuraLog does not require you to create an account, log in, or provide any personal details (such as your name, email address, or phone number) to use the app.</li>
+          <li><strong>Telemetry & Usage Data:</strong> The app does not collect telemetry, analytical event tracking, or performance statistics about your usage.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Permissions</h2>
+        <p>To provide optional convenience features, AuraLog may request the following device permissions:</p>
+        <ul>
+          <li><strong>Notifications:</strong> To send you daily gentle reminders to log your mood and maintain your journaling habit. You can disable these at any time via your device's settings.</li>
+          <li><strong>Storage/Media Access:</strong> If the app supports locally exporting/importing backup files of your journal entries, we request access to save the backup file to your preferred local folder.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Third-Party Services</h2>
+        <p>AuraLog does not integrate with third-party tracking, advertising (such as Google AdMob), or analytics SDKs (such as Firebase Analytics) that monitor your activity. Your journal remains 100% private to you.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Security</h2>
+        <p>Because all of your data is stored locally on your device, the security of your journal relies on the safety of your hardware. I recommend protecting your device with a secure passcode, PIN, or biometric lock to prevent unauthorized access to your logs.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Links to Other Sites</h2>
+        <p>This service does not contain links to external websites. If external links are added in the future (e.g. references to resources), we encourage you to review their respective privacy policies as we have no control over third-party content.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Children's Privacy</h2>
+        <p>These services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. Since no data is collected by the application, parents can rest assured that children's diaries remain completely offline and private on the local device.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Changes to This Privacy Policy</h2>
+        <p>I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at <a href="mailto:algochets@gmail.com">algochets@gmail.com</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Built with HTML · Deployed on Vercel · &copy; 2026 Chetan Chavan
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', saved);
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Listen to changes from other tabs/pages to keep themes in sync instantly
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'theme') {
+        html.setAttribute('data-theme', e.newValue || 'light');
+      }
+    });
+  </script>
+</body>
+</html>
